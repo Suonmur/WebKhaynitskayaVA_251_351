@@ -1,0 +1,150 @@
+/* 1. Универсальный селектор */
+* {
+    box-sizing: border-box;
+}
+
+/*Общие стилистраницы */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333333;
+    background-color: #f4f4f4;
+}
+
+
+.container {
+    width: 900px;
+    margin: 0;
+    padding: 0 15px;
+}
+
+/* 3. Шапка и навигация  */
+header {
+    background-color: #ffffff;
+    margin: 0 0 20px 0;
+    padding: 20px 0;
+    border-bottom: 2px solid #dddddd;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #111111;
+    margin: 0 0 10px 0;
+}
+
+nav {
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+
+/* Ссылки */
+a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #152e48;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+/* Изменение цвета ссылки при наведении */
+a:hover {
+    color: #d9534f;
+}
+
+/* Основной блок (main) и секции (section) */
+main {
+    margin: 0 auto 30px auto;
+    padding: 0;
+}
+
+section {
+    background-color: transparent; /* Прозрачный фон */
+    border: none;                  /*  границы у блоков */
+    margin: 0 0 50px 0;           /* нижний отступом */
+    padding: 0;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #222222;
+    margin: 0 0 15px 0;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #444444;
+    margin: 0 0 10px 0;
+}
+
+/* Изображение */
+img {
+    height: 400px;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+/* Список */
+ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+li {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+/* Таблица */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0 0 0;
+}
+
+th, td {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+}
+
+th {
+    background-color: #eeeeee;
+    font-weight: 700;
+}
+
+
+footer {
+    background-color: black;
+    color: white;
+    margin: 30px 0 0 0;
+    padding: 30px 15px;
+    text-align: center;
+}
+
+footer h2 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: white;
+    margin: 5px 0;
+}
+
+footer a {
+    color: #ff9900;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
