@@ -72,7 +72,7 @@ nav a#active {
 main {
     margin: 0 auto 30px auto;
     padding: 0;
-    flex: 1 0 auto;        /* растягивается и толкает футер вниз */
+    flex: 1 0 auto;
     width: 100%;
 }
 
@@ -127,7 +127,7 @@ li {
 /* Таблица */
 table {
     width: 100%;
-    border-collapse: collapse; /*чтобы слились*/
+    border-collapse: collapse;
     margin: 15px 0 0 0;
 }
 
