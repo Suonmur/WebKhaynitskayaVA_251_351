@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 
-/*Общие стилистраницы */
+/* Общие стили страницы */
 body {
     margin: 0;
     padding: 0;
@@ -12,16 +12,19 @@ body {
     font-weight: 400;
     color: #333333;
     background-color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-
 .container {
-    width: 900px;
-    margin: 0;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
     padding: 0 15px;
 }
 
-/* 3. Шапка и навигация  */
+/* 3. Шапка и навигация */
 header {
     background-color: #ffffff;
     margin: 0 0 20px 0;
@@ -40,6 +43,9 @@ h1 {
 nav {
     margin: 10px 0 0 0;
     padding: 0;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 /* Ссылки */
@@ -48,24 +54,32 @@ a {
     font-size: 16px;
     color: #152e48;
     text-decoration: none;
-    margin-right: 15px;
+    margin-right: 0;
 }
 
 /* Изменение цвета ссылки при наведении */
 a:hover {
-    color: #d9534f;
+    color: tomato;
+}
+
+/* Активная ссылка */
+a#active,
+nav a#active {
+    color: tomato;
 }
 
 /* Основной блок (main) и секции (section) */
 main {
     margin: 0 auto 30px auto;
     padding: 0;
+    flex: 1 0 auto;        /* растягивается и толкает футер вниз */
+    width: 100%;
 }
 
 section {
-    background-color: transparent; /* Прозрачный фон */
-    border: none;                  /*  границы у блоков */
-    margin: 0 0 50px 0;           /* нижний отступом */
+    background-color: transparent;
+    border: none;
+    margin: 0 0 50px 0;
     padding: 0;
 }
 
@@ -87,9 +101,16 @@ p {
 
 /* Изображение */
 img {
-    height: 400px;
-    height: 300px;
+    max-width: 100%;
+    height: auto;
     margin-bottom: 20px;
+}
+
+.about-img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
 }
 
 /* Список */
@@ -106,7 +127,7 @@ li {
 /* Таблица */
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: collapse; /*чтобы слились*/
     margin: 15px 0 0 0;
 }
 
@@ -122,13 +143,13 @@ th {
     font-weight: 700;
 }
 
-
 footer {
     background-color: black;
     color: white;
     margin: 30px 0 0 0;
     padding: 30px 15px;
     text-align: center;
+    flex-shrink: 0;
 }
 
 footer h2 {
@@ -147,4 +168,46 @@ footer a {
 
 footer a:hover {
     color: #ffffff;
+}
+
+/* Адаптивность главной страницы */
+@media (max-width: 800px) {
+    .about-img {
+        width: 500px;
+        max-width: 100%;
+    }
+
+    nav {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        font-size: 20px;
+    }
+
+    .about-img {
+        width: 100%;
+    }
+
+    th, td {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    th, td {
+        font-size: 12px;
+        padding: 6px;
+    }
 }
