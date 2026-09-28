@@ -1,26 +1,26 @@
+/* Стили для страницы «Собрать ланч» */
 
-
-/* Блок с блюдами */
+/* Блок с блюдами (section > div.dishes) */
 .dishes {
-    display: grid;                   /*чтобы шли в строкe CSS Grid на 3 колонки*/
+    display: grid; /*в строку*/
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
 }
 
-/* Блок каждого блюда */
+/* Блок каждого блюда (section > div > div.dish) */
 .dish {
-    display: flex;                     /*flex-контейнер с вертикальным расположением*/
+    display: flex;
     flex-direction: column;
     padding: 30px 40px;
     border-radius: 35px;
     cursor: pointer;
-    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));          /*тень*/
-    background-color: white;                                       /*цвет карточек*/
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    background-color: white;
     height: 100%;
 }
 
 .dish:hover {
-    border: 2px solid tomato;   
+    border: 2px solid tomato;
 }
 
 .dish:hover button {
@@ -33,14 +33,14 @@
     width: 100%;
     border-radius: 35px;
     margin-bottom: 15px;
-    object-fit: cover;            /*обрезать картинку чтобы без искажений*/
+    object-fit: cover;  /*чтобы не растягивались*/
     height: 180px;
 }
 
 /* Цена */
 .dish .price {
-    font-size: 22px;     /*размер*/
-    font-weight: 700;    /*жирность*/
+    font-size: 22px;
+    font-weight: 700;
     margin-bottom: 8px;
 }
 
@@ -65,16 +65,191 @@
     padding: 10px 30px;
     border-radius: 10px;
     border: none;
-    cursor: pointer;  /*ручка указатель*/
+    cursor: pointer;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    align-self: flex-start;        /*прижать к началу*/
+    align-self: flex-start;
     transition: background-color 0.2s, color 0.2s;
 }
 
 .dish button:hover {
     background-color: tomato;
     color: white;
+}
+
+
+/* Стили для формы заказа */
+.order-section {
+    margin-top: 50px;       /* Отступ сверху */
+    margin-bottom: 50px;    /* Отступ снизу */
+    padding: 0 20px;        
+    box-sizing: border-box; 
+}
+
+/* Ограничение максимальной ширины формы и выравнивание по центру */
+.order-form {
+    max-width: 1200px;      
+    margin: 0 auto;         
+    display: flex;  /* колонки */
+    gap: 30px;  
+    flex-wrap: wrap; /* разрешен перенос */
+}
+
+.form-block {
+    flex: 1 1 400px; /* блок может растягиваться и сжиматься. мин - 400 */
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 25px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin: 0;
+}
+
+.form-block legend {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111111;
+    padding: 0 10px;
+}
+ /* поле + подпись */
+.form-group {
+    display: flex;
+    flex-direction: column; /* друг под другом */
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #333333;
+}
+
+/* все поля ввода */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="time"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    background-color: #fafafa;
+    transition: border-color 0.2s;
+}
+
+
+/* обводка */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: tomato;
+    background-color: #ffffff;
+}
+
+/* поле комметариев к заказу */
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Галочка подписка */
+.checkbox-group {
+    flex-direction: row; /* чтобы рядом */
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group label {
+    font-weight: 400;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+/* время доставки надписи*/
+.radio-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.radio-label {
+    font-weight: 400 !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+/* Кнопки */
+
+.form-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn-reset,
+.btn-submit {
+    flex: 1; /* делят ширину поровну */
+    padding: 12px 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-reset {
+    background-color: #eeeeee;
+    color: #333333;
+}
+
+.btn-reset:hover {
+    background-color: #dddddd;
+}
+
+.btn-submit {
+    background-color: tomato;
+    color: #ffffff;
+}
+
+.btn-submit:hover {
+    background-color: #e04328;
+}
+
+.order-section h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Адаптивность формы */
+/*На  ≤ 800px два блока формы встают друг под другом.*/
+@media (max-width: 800px) {
+    .order-form {
+        flex-direction: column;
+    }
+}
+
+/*На очень узких экранах*/
+@media (max-width: 400px) {
+    .form-block {
+        padding: 15px;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+    }
 }
 
 /* Адаптивность страницы «Собрать ланч» */
